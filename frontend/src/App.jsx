@@ -882,7 +882,7 @@ export default function RadiAIApp() {
                         </div>
 
                         {/* Hover Dropdown for Logout */}
-                        <div className="absolute top-[calc(100%+8px)] right-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[120]">
+                        <div className="absolute top-full mt-2 right-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[120]">
                             <div className="bg-[#18181b] rounded-xl shadow-2xl border border-slate-700 p-2 transform origin-top-right">
                                 <button
                                     onClick={() => navigate('profile')}
