@@ -84,7 +84,7 @@ const DoctorDashboard = ({ userProfile }) => {
             const formData = new FormData();
             formData.append('file', file);
 
-            const analysisResponse = await fetch('https://3.239.75.17/analyze', {
+            const analysisResponse = await fetch('https://spot-themselves-reflects-attributes.trycloudflare.com/analyze', {
                 method: 'POST',
                 body: formData,
             });
