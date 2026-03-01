@@ -837,7 +837,7 @@ export default function RadiAIApp() {
             <BackgroundPattern />
 
             {/* Navbar */}
-            <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-neutral-800 rounded-full border border-slate-700 pl-6 pr-1.5 h-[52px] flex items-center justify-between w-[95%] max-w-3xl shadow-[0_8px_30px_rgb(0,0,0,0.8)]">
+            <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] bg-neutral-800 rounded-full border border-slate-700 pl-6 pr-1.5 h-[52px] flex items-center justify-between w-[95%] max-w-3xl shadow-[0_8px_30px_rgb(0,0,0,0.8)]">
                 <div
                     className="cursor-pointer flex items-center gap-2"
                     onClick={() => navigate('landing')}
@@ -866,14 +866,14 @@ export default function RadiAIApp() {
 
                 {user ? (
                     <div
-                        className="flex items-center gap-3 cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-colors group relative"
+                        className="flex items-center gap-3 cursor-pointer hover:bg-slate-700 p-2 rounded-lg transition-colors group relative"
                         title="Profile"
                     >
                         <div className="hidden sm:flex flex-col items-end text-xs mr-2">
-                            <span className="font-bold text-slate-900">{user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User'}</span>
-                            <span className="text-slate-500">{userProfile?.role ? userProfile.role.charAt(0).toUpperCase() + userProfile.role.slice(1) : (user?.user_metadata?.role ? user.user_metadata.role.charAt(0).toUpperCase() + user.user_metadata.role.slice(1) : '')}</span>
+                            <span className="font-bold text-white">{user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User'}</span>
+                            <span className="text-slate-400">{userProfile?.role ? userProfile.role.charAt(0).toUpperCase() + userProfile.role.slice(1) : (user?.user_metadata?.role ? user.user_metadata.role.charAt(0).toUpperCase() + user.user_metadata.role.slice(1) : '')}</span>
                         </div>
-                        <div className="w-9 h-9 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 border border-slate-200 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors overflow-hidden">
+                        <div className="w-9 h-9 bg-slate-700 rounded-full flex items-center justify-center text-slate-300 border border-slate-600 group-hover:bg-blue-900 group-hover:text-blue-400 transition-colors overflow-hidden">
                             {user?.user_metadata?.avatar_url ? (
                                 <img src={user.user_metadata.avatar_url} alt="Profile" className="w-full h-full object-cover" />
                             ) : (
@@ -882,18 +882,18 @@ export default function RadiAIApp() {
                         </div>
 
                         {/* Hover Dropdown for Logout */}
-                        <div className="absolute top-[48px] right-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]">
-                            <div className="bg-white rounded-xl shadow-xl border border-slate-100 p-2 transform origin-top-right">
+                        <div className="absolute top-[calc(100%+8px)] right-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[120]">
+                            <div className="bg-[#18181b] rounded-xl shadow-2xl border border-slate-700 p-2 transform origin-top-right">
                                 <button
                                     onClick={() => navigate('profile')}
-                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition-colors mb-1"
+                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-200 hover:bg-slate-800 rounded-lg transition-colors mb-1"
                                 >
                                     <User size={16} />
                                     My Profile
                                 </button>
                                 <button
                                     onClick={handleLogout}
-                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                                    className="w-full flex items-center gap-2 px-3 py-2 text-sm text-rose-500 hover:bg-rose-950/50 rounded-lg transition-colors"
                                 >
                                     <LogOut size={16} />
                                     Sign Out
@@ -913,7 +913,7 @@ export default function RadiAIApp() {
                 )}
             </nav>
 
-            <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-8 relative">
+            <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-8 relative z-0">
                 {view === 'login' && <LoginPage setView={setView} />}
                 {view === 'profile-setup' && <ProfileSetupPage setView={setView} />}
                 {view === 'role-select' && <RoleSelectionPage setView={setView} onRoleSelected={handleRoleSelected} />}
