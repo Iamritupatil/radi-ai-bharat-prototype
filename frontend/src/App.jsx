@@ -295,7 +295,7 @@ export default function RadiAIApp() {
             const formData = new FormData();
             formData.append("file", xrayFile);
 
-            const url = "http://3.239.75.17/analyze"; // Deployed AWS Backend
+            const url = "https://3.239.75.17/analyze"; // Secure Deployed AWS Backend
             console.log("ðŸš€ Sending request to:", url);
 
             const response = await fetch(url, {

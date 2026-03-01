@@ -144,7 +144,7 @@ const DemoDashboard = ({ navigate }) => {
             const formData = new FormData();
             formData.append('file', file);
 
-            const analysisResponse = await fetch('http://3.239.75.17/analyze', {
+            const analysisResponse = await fetch('https://3.239.75.17/analyze', {
                 method: 'POST',
                 body: formData,
             });
