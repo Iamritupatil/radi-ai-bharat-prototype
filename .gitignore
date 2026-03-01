@@ -1,0 +1,40 @@
+# Python / Backend
+.venv/
+backend/venv/
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.coverage
+backend/*.log
+backend/uploads/
+backend/output/
+backend/*.db
+
+# Frontend / JS
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+frontend/npm-debug.log*
+
+# Massive AI Models and Datasets
+# Ignore all training checkpoints and datasets to save 15GB+
+ai_models/classification/checkpoints/
+ai_models/classification/MURA-v1.1/
+ai_models/detection/yolo/runs/
+ai_models/detection/yolo/datasets/
+ai_models/detection/yolo/*.pt
+ai_models/classification/*.pth
+*.pt
+*.pth
+datasets/
+data/
+
+# Allow only the best model we explicitly need if we want to track it
+!ai_models/detection/yolo/runs/fracture_detect/weights/best.pt
+
+# OS / Editor Files
+.DS_Store
+.vscode/
+.idea/
+*.swp
