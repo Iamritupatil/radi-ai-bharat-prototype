@@ -144,7 +144,7 @@ const DemoDashboard = ({ navigate }) => {
             const formData = new FormData();
             formData.append('file', file);
 
-            const analysisResponse = await fetch('https://spot-themselves-reflects-attributes.trycloudflare.com/analyze', {
+            const analysisResponse = await fetch('https://preference-management-bug-pct.trycloudflare.com/analyze', {
                 method: 'POST',
                 body: formData,
             });
