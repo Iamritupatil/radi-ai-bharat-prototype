@@ -295,7 +295,7 @@ export default function RadiAIApp() {
             const formData = new FormData();
             formData.append("file", xrayFile);
 
-            const url = "https://preference-management-bug-pct.trycloudflare.com/analyze"; // Secure Deployed AWS Backend
+            const url = "https://preference-managed-rug-pct.trycloudflare.com/analyze"; // Secure Deployed AWS Backend
             console.log("ðŸš€ Sending request to:", url);
 
             const response = await fetch(url, {
